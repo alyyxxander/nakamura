@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <title>Map</title>
-</head>
+    include "include.inc";
 
-<body>
+    HTMLStart( "Map Page" )
+    
+    WrapperStart();
 
-    <div class="primary-wrapper">
-        <!-- NAV PANEL -->
-        <nav class="nav-panel panel">
-            <nav class="button"><a href="index.html">HOME</a></nav>
+    HTMLNavigation();
 
-            <nav class="button"><a href="map.html">MAP</a></nav>
+    HTMLDecor();
 
-            <nav class="button"><a href="contact.html">CONTACT</a></nav>
-
-            <nav class="button"><a href="about.html">ABOUT</a></nav>
-
-            <nav class="button"><a href="menu.html">MENU</a></nav>
-
-            <nav class="button"><a href="takeout.html">ORDER</a></nav>
-        </nav>
-        <!-- SIDE DECOR -->
-        <aside class="left panel decor"></aside>
-
-        <aside class="right panel decor"></aside>
-
+?>
 
         <!-- MAP WRAPPER -->
         <main class="map-wrapper panel">
@@ -43,15 +25,12 @@
             </div>
         </main>
         
-        <!-- FOOTER -->
-        <footer class="panel">
-            <span>COMP-205: Web-Based Application Development</span>
-            <span>Spring 2022</span>
-            <span>Group 5</span>
-        </footer>
+<?php
 
-    </div>
+    HTMLFooter();
 
-</body>
+    WrapperEnd();
 
-</html>
+    HTMLEnd();
+
+?>
