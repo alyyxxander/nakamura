@@ -95,18 +95,11 @@
 
         </main> <!-- end of main panel-->
 
-        <!-- FOOTER -->
-        <footer class="panel">
-            <span>COMP-205: Web-Based Application Development</span>
-            <span>Spring 2022</span>
-            <span>Group 5</span>
-        </footer>
-
 <?php
 
-WrapperEnd();
-
 HTMLFooter();
+
+WrapperEnd();
 
 HTMLEnd();
 
