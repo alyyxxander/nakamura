@@ -1,35 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <title>Takeout Page</title>
-</head>
+    include "include.inc";
 
-<body>
+    HTMLStart( "Order Page" )
+    
+    WrapperStart();
 
-    <div class="primary-wrapper">
+    HTMLNavigation();
 
-        <!-- NAV PANEL -->
-        <nav class="nav-panel panel">
-            <nav class="button"><a href="index.html">HOME</a></nav>
+    HTMLDecor();
 
-            <nav class="button"><a href="map.html">MAP</a></nav>
-
-            <nav class="button"><a href="contact.html">CONTACT</a></nav>
-
-            <nav class="button"><a href="about.html">ABOUT</a></nav>
-
-            <nav class="button"><a href="menu.html">MENU</a></nav>
-
-            <nav class="button"><a href="takeout.html">ORDER</a></nav>
-        </nav>
-
-        <!-- SIDE DECOR -->
-        <aside class="left panel decor"></aside>
-        <aside class="right panel decor"></aside>
+?>
         
         <main class="takeout-wrapper panel">
 
@@ -121,16 +102,12 @@
             <span>Group 5</span>
         </footer>
 
-    </div>
+<?php
 
+WrapperEnd();
 
+HTMLFooter();
 
-    <!-- these elements are hidden -->
-    <div class="invisible">
-        <div class="drop-here"></div>
-        <div class="item-quantity item" id="default-id">0</div>
-    </div>
+HTMLEnd();
 
-</body>
-
-</html>
+?>
