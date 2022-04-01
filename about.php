@@ -1,34 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <title>About Us</title>
-</head>
+    include "include.inc";
 
-<body>
-    <div class="primary-wrapper">
-        <!-- NAV PANEL -->
-        <nav class="nav-panel panel">
-            <nav class="button"><a href="index.html">HOME</a></nav>
+    HTMLStart( "Order Page" )
+    
+    WrapperStart();
 
-            <nav class="button"><a href="map.html">MAP</a></nav>
+    HTMLNavigation();
 
-            <nav class="button"><a href="contact.html">CONTACT</a></nav>
+    HTMLDecor();
 
-            <nav class="button"><a href="about.html">ABOUT</a></nav>
-
-            <nav class="button"><a href="menu.html">MENU</a></nav>
-
-            <nav class="button"><a href="takeout.html">ORDER</a></nav>
-        </nav>
-        <!-- SIDE DECOR -->
-        <aside class="left panel decor"></aside>
-
-        <aside class="right panel decor"></aside>
-
-        <!-- ABOUT WRAPPER -->
+?> 
         <main class="about-wrapper panel">
             <!-- Centers the text on page -->
             <section class="item vcenter">
@@ -48,15 +30,13 @@
             <img src="assets/About/ramen-nakamura-about.jpg" alt="Chef Shigetoshi Nakamura" style = "border-radius:5px;width: auto;height: auto;max-width: 100%;">
 
         </main>
-        <!-- FOOTER -->
-        <footer class="panel">
-            <span>COMP-205: Web-Based Application Development</span>
-            <span>Spring 2022</span>
-            <span>Group 5</span>
-        </footer>
 
-    </div>
+<?php
 
-</body>
+HTMLFooter();
 
-</html>
+WrapperEnd();
+
+HTMLEnd();
+
+?>
