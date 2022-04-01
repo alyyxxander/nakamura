@@ -53,3 +53,15 @@
 <?php
     }
 ?>
+
+// Aside Decor
+<?php
+    // function for decor
+    function HTMLDecor()
+    {
+?>
+        <aside class="left panel decor"></aside>
+        <aside class="right panel decor"></aside>
+<?php
+    }
+?>
