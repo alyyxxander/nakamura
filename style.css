@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,100&family=Redressed&family=Yanone+Kaffeesatz:wght@300&display=swap");
+
+body {
+	background-color: #161616;
+	font-family: "Yanone Kaffeesatz", sans-serif;
+	font-size: larger;
+	padding: 5px;
+	max-width: 100vw;
+}
+
+/*  Structure:
+      -> Have the same primary page structure on every page.
+      -> Have the "main" element serve as the wrapper that is unique to each page
+      -> Basically, the only thing that varies between pages is the content in <main>
+*/
+
+/*  References:
+        -> for carousel on homepage:
+                https://tinyurl.com/yrxu7but
+
+*/
+
+
+
+
+
+
+
+
+/* ========== PRIMARY PAGE STRUCTURE ========== */
+.primary-wrapper {
+	display: grid;
+	background-color: #595959;
+	padding: 10px;
+	border-radius: 5px;
+	gap: 6px;
+	min-height: 94vh;
+	min-width: 80vw;
+	object-fit: contain;
+
+	grid-template-columns: auto 1fr auto;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		"nav nav nav"
+		"L-side main R-side"
+		"footer footer footer";
+}
+
+aside.left {
+	grid-area: L-side;
+	background-image: url("assets/left.png");
+}
+
+aside.right {
+	grid-area: R-side;
+	background-image: url("assets/right.png");
+}
+
+aside.decor {
+	min-width: 5vw;
+	max-width: 5vw;
+
+	background-repeat: repeat-y;
+	padding: 5px;
+	background-size: contain;
+	background-origin: content-box;
+	background-position: center;
+}
+
+footer.panel {
+	grid-area: footer;
+	height: min-content;
+	display: flex;
+	justify-content: space-around;
+}
+
+main {
+	grid-area: main;
+	display: grid;
+	gap: 5px;
+}
+
+nav.nav-panel {
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-area: nav;
+}
+
+/* ========== MAIN PANEL WRAPPERS ========== */
+.menu-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	grid-template-areas:
+		"drinks sushi"
+		"drinks nigiri"
+		"r-and-s r-and-s"
+		"small-plates small-plates"
+		"reference reference";
+}
+
+.about-wrapper {
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	font-size: 22 px;
+	gap: 7px !important;
+}
+
+.contact-wrapper {
+	display: grid;
+	text-align: center;
+	font-size: x-large;
+	gap: 10px !important;
+	grid-template-columns: 1fr 200px;
+}
+
+.map-wrapper {
+	align-items: center;
+    
+}
+
+.home-wrapper {
+	display: grid;
+    grid-template-rows: min-content auto;
+}
+
+.takeout-wrapper {
+	display: grid;
+	grid-template-columns: 2fr 2px 1fr;
+}
+
+/* ========== COMMON ELEMENTS & CLASSES ========== */
+.panel {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #9a9a9a;
+	display: grid;
+	gap: 4px;
+	vertical-align: middle;
+}
+
+.inner-panel {
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #c9c9c9;
+}
+
+.item, .button, .category-toggles {
+	background-color: #c9c9c9;
+	padding: 8px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.vcenter {
+	text-align: center;
+}
+
+.panel-title {
+	font-size: x-large;
+	font-weight: bold;
+	height: min-content;
+}
+
+h1 {
+	text-align: center;
+	height: min-content;
+	text-decoration: underline;
+}
+
+h2 {
+	text-align: center;
+	height: min-content;
+	text-decoration: bold;
+	color: white;
+}
+
+.decorative-div img {
+	width: 100%;
+	max-height: 60px;
+}
+
+hr {
+	width: 100%;
+	height: min-content;
+	border-right: none;
+}
+
+.debug {
+	background-color: #edff29;
+	border: 3px solid black;
+}
+
+
+/* ========== ELEMENT CLASSES IN MENU PAGE ========== */
+.ramen-sides {
+	grid-area: r-and-s;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 5px;
+}
+
+.sides {
+	grid-template-rows: min-content;
+}
+
+.drinks {
+	grid-area: drinks;
+	text-align: center;
+}
+
+.drinks .item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.reference {
+	grid-area: reference;
+}
+
+.sushi {
+	grid-area: sushi;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 30px 1fr 1fr;
+}
+
+.nigiri {
+	grid-area: nigiri;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.small-plates {
+	grid-area: small-plates;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 30px 1fr 1fr 1fr;
+}
+
+.item .name, .button {
+	font-family: "Redressed", cursive;
+	font-size: x-large;
+	text-decoration: underline;
+}
+
+.item .name {
+	padding-bottom: 3px;
+}
+
+.item .description {
+	font-family: "Montserrat", sans-serif;
+	font-size: medium;
+}
+
+.reference .item {
+	text-align: left;
+}
+
+.sushi .panel-title, .nigiri .panel-title, .small-plates .panel-title {
+	/* have the panel title span of all columns in the first row */
+	grid-column: 1/4;
+}
+
+.panel-title span {
+	font-size: large;
+}
+
+/* ========== ELEMENT CLASSES IN ABOUT PAGE ========== */
+.about-wrapper p {
+	line-height: 1.2;
+}
+
+/* ========== ELEMENT CLASSES IN CONTACT PAGE ========== */
+.contact-wrapper .item {
+	padding: 10px;
+}
+
+/* ========== ELEMENT CLASSES IN MAP PAGE ========== */
+.map-wrapper.panel {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+/* i put the page background on the trello board for the next version */
+.map-img {
+	/* position: relative; */
+    /* background: url("https://fastly.4sqi.net/img/general/200x200/205457416_NrnBYu2zVyRmpfA3j2w5tKwS11rBKqf26XTlevGf0-w.jpg") 100% / 50%; */
+    border-radius: 6px;
+}
+
+
+.map-wrapper .item {
+	height: 100%;
+}
+
+.map-wrapper h2 {
+    color: black; /* text color*/
+}
+
+/* ========== ELEMENT CLASSES IN HOME PAGE ========== */
+.intro {
+    position: relative;
+    background: no-repeat url("assets/home/Nakamura-Lights.jpeg") 50% / 100%;
+    border-radius: 6px;
+}
+.intro img {
+    vertical-align: top;
+    width: 100%;
+    opacity: 0;  /* make it transparent */
+}
+.intro > div {
+    position: absolute;
+    top: 10%;
+    background-color:rgb(0, 0, 0, 0.5);
+    margin: 0 20px;
+    height: min-content;
+    border-radius: 10px;
+}
+.intro h2 {
+    margin: 8px 0;
+}
+
+.carousel-tile img {
+    width: 92%;
+    max-width: 450px;
+	border-radius: 5px;
+	margin-top: 10px;
+    object-fit: cover;
+}
+
+.carousel-tile {
+	background-color: #c9c9c9;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.carousel-tile h2 {
+	color: #741c1c;
+	margin: 8px;
+}
+
+.carousel-container {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+    gap: 5px;
+}
+
+#prev, #next {
+  color:#595959;
+  border-radius: 10px;
+  padding: 8px;
+  position: absolute;
+  margin: 5px;
+  cursor: pointer;
+  top: 43%;
+  font-size: 2rem;
+  transition: 0.5s ease;
+}
+
+#prev {left: 0;}
+#next {right: 0;}
+
+#next:hover, #prev:hover {
+  color: white;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.image-carousel {
+    /* in order to use position: absolute; on the next/prev icons, you must use position: relative; on the parent/container */
+    position: relative;
+}
+
+
+/* ========== ELEMENT CLASSES IN TAKEOUT PAGE ========== */
+.vertical-divider {
+	background-color: #741c1c;
+	border-radius: 50%;
+}
+
+.category-toggles {
+	font-family: "Redressed", cursive;
+	font-size: x-large;
+	color: #741c1c;
+	border: 2px solid #741c1c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	min-height: 80px;
+}
+
+.takeout-menu {
+	display: grid;
+	margin-right: 5px;
+	gap: 8px;
+	grid-auto-rows: min-content;
+}
+
+.takeout-wrapper h1 {
+	margin: 0;
+}
+
+details {
+	width: 100%;
+}
+
+.toggle-contents {
+	background-color: #741c1c;
+	display: grid;
+	gap: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+details summary {
+	cursor: pointer;
+}
+
+/*   USER CART   */
+.cart-heading {
+	display: grid;
+	grid-template-columns: auto 50px;
+	column-gap: 5px;
+}
+
+.cart-panel {
+	display: grid;
+	margin-left: 5px;
+	grid-template-rows: min-content 1fr;
+	grid-auto-rows: min-content;
+	gap: 5px;
+	background-color: #741c1c;
+	color: white; /* text color */
+	padding: 8px;
+	border-radius: 8px;
+}
+
+.cart-panel button {
+	height: 50px;
+	border-radius: 5px;
+	background-color: white;
+	cursor: pointer;
+}
+
+/* these blocks are for the total price and total items in the user-cart panel*/
+.totalItems, .totalPrice {
+	background-color: #c9c9c9;
+	color: #741c1c;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: bold;
+}
+.totalPrice span, .totalItems span {
+	text-align: right;
+}
+.totalPrice, .totalItems {
+	display: grid;
+	grid-template-columns: auto auto;
+	margin: 0;
+}
+
+#user-cart {
+	display: grid;
+	grid-template-columns: auto 50px;
+	gap: 8px;
+	grid-auto-rows: min-content;
+	color: #741c1c; /* text color */
+	font-weight: bold;
+}
+
+.invisible {
+	display: none;
+}
+
+.drop-here {
+	background-color: lightgray;
+	border: 2px dashed dimgray;
+	height: 30px;
+}
+
+.takeout-wrapper hr {
+	margin: 0;
+}
+
+/* item buttons */
+.category-button-panel .button {
+	font-family: "Redressed", cursive;
+	font-size: x-large;
+	text-decoration: none;
+}
+.category-button-panel {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 5px;
+}
+.category-button-panel button {
+	font-family: "Redressed", cursive;
+	font-size: x-large;
+	cursor: pointer;
+}
+
+/* takeout panels are the panels CONTAINING THE ITEMS on the takeout page that appear when you click on their category button
+    i.e. the "beverages", "sushi", "nigiri", "ramen" and "sides" buttons */
+.takeout-panel {
+	background-color: #741c1c;
+	display: grid;
+	gap: 10px;
+    padding: 10px 30px;
+	border: 2px solid black;
+	border-radius: 8px;
+
+	/* font formatting of items in the panel */
+	font-family: "Redressed", cursive;
+	font-size: x-large;
+	color: #741c1c;
+}
+
+.takeout-panel h1 {
+	color: white;
+	margin-top: -5px;
+    font-size: larger;
+}
+
+
+
+/* formatting for the "directions" toggle */
+.direction-toggle {
+	font-family: "Redressed", cursive;
+	font-size: x-large;
+	background-color: #c9c9c9;
+    color: #741c1c; /* text color */
+    border: 2px solid #741c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+	text-align: center;
+	min-height: 50px;
+}
+
