@@ -8,8 +8,6 @@
 </head>
 
 <body>
-    <h1>check check 1 2</h1> 
-
     <div class="primary-wrapper">
         <!-- NAV PANEL -->
         <nav class="nav-panel panel">
