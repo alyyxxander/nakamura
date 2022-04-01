@@ -1,4 +1,3 @@
-
 // Start + Title of program
 <?php
     // function for the start of an html page
@@ -38,17 +37,17 @@
         <div class="primary-wrapper">
         <!-- NAV PANEL -->
         <nav class="nav-panel panel">
-            <nav class="button"><a href="index.html">HOME</a></nav>
+            <nav class="button"><a href="index.php">HOME</a></nav>
 
-            <nav class="button"><a href="map.html">MAP</a></nav>
+            <nav class="button"><a href="map.php">MAP</a></nav>
 
-            <nav class="button"><a href="contact.html">CONTACT</a></nav>
+            <nav class="button"><a href="contact.php">CONTACT</a></nav>
 
-            <nav class="button"><a href="about.html">ABOUT</a></nav>
+            <nav class="button"><a href="about.php">ABOUT</a></nav>
 
-            <nav class="button"><a href="menu.html">MENU</a></nav>
+            <nav class="button"><a href="menu.php">MENU</a></nav>
 
-            <nav class="button"><a href="takeout.html">ORDER</a></nav>
+            <nav class="button"><a href="takeout.php">ORDER</a></nav>
         </nav>
 <?php
     }

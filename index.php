@@ -2,7 +2,7 @@
 
     include "include.inc";
 
-    HTMLStart( "Home Page" )
+    HTMLStart( "Home Page" );
     
     WrapperStart();
 
