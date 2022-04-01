@@ -80,3 +80,25 @@
 <?php
     }
 ?>
+
+// Primary Wrapper Start
+<?php
+    // function for start of primary wrapper
+    function WrapperStart()
+    {
+?>
+        <div class="primary-wrapper">
+<?php
+    }
+?>
+
+// Primary Wrapper End
+<?php
+    // function for end of primary wrapper
+    function WrapperEnd()
+    {
+?>
+        </div>
+<?php
+    }
+?>
