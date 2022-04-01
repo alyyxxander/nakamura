@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <!-- first script is an icon pack -->
-    <script src="https://kit.fontawesome.com/78f9737a32.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
-    <title>Home Page</title>
-</head>
+    include "include.inc";
 
-<body>
+    HTMLStart( "Home Page" )
+    
+    WrapperStart();
 
-    <div class="primary-wrapper">
+    HTMLNavigation();
 
-        <!--NAV PANEL-->
-        <nav class="nav-panel panel">
-            <nav class="button"><a href="index.html">HOME</a></nav>
+    HTMLDecor();
 
-            <nav class="button"><a href="map.html">MAP</a></nav>
-
-            <nav class="button"><a href="contact.html">CONTACT</a></nav>
-
-            <nav class="button"><a href="about.html">ABOUT</a></nav>
-
-            <nav class="button"><a href="menu.html">MENU</a></nav>
-
-            <nav class="button"><a href="takeout.html">ORDER</a></nav>
-        </nav>
-
-        <!-- SIDE DECORS -->
-        <aside class="left panel decor"></aside>
-        <aside class="right panel decor"></aside>
+?>
 
         <main class="home-wrapper">
             <!-- HOME WRAPPER and INTRO -->
@@ -106,23 +85,12 @@
 
         </main>
 
-        <!-- FOOTER -->
-        <footer class="panel">
-            <span>COMP-205: Web-Based Application Development</span>
-            <span>Spring 2022</span>
-            <span>Group 5</span>
-        </footer>
+<?php
 
-    </div>
+    HTMLFooter();
 
+    WrapperEnd();
 
+    HTMLEnd();
 
-    <!-- these elements are hidden -->
-    <div class="invisible">
-        <div class="drop-here"></div>
-        <div class="item-quantity item" id="default-id">0</div>
-    </div>
-
-</body>
-
-</html>
+?>
