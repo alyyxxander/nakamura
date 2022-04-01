@@ -10,10 +10,10 @@
 
     HTMLDecor();
 
+    TakeoutWrapperStart();
+
 ?>
         
-        <main class="takeout-wrapper panel">
-
             <!-- ======== LEFT PANEL ======== -->
             <section class="takeout-menu" id="takeout-menu">
                 <h1>TAKEOUT MENU</h1>
@@ -93,9 +93,9 @@
 
             </section> <!-- end of user cart (right panel) -->
 
-        </main> <!-- end of main panel-->
-
 <?php
+
+TakeoutWrapperEnd();
 
 HTMLFooter();
 

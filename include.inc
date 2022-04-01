@@ -102,3 +102,25 @@
 <?php
     }
 ?>
+
+// Takeout Wrapper Start
+<?php
+    // function for start of takeout wrapper
+    function TakeoutWrapperStart()
+    {
+?>
+        <main class="takeout-wrapper panel">
+<?php
+    }
+?>
+
+// Takeout Wrapper End
+<?php
+    // function for end of takeout wrapper
+    function TakeoutWrapperEnd()
+    {
+?>
+        </main>
+<?php
+    }
+?>
