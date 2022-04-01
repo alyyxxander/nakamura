@@ -14,7 +14,7 @@
         <main class="about-wrapper panel">
             <!-- Centers the text on page -->
             <section class="item vcenter">
-                <h1>About Us p</h1>
+                <h1>About Us</h1>
 
                 <p>Chef Shigetoshi Nakamura debuts his first restaurant in the United States.</p>
 
