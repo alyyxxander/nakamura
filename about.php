@@ -1,16 +1,10 @@
 <?php
-
-    include "include.inc";
-
-    HTMLStart( "About Page" );
-    
-    WrapperStart();
-
+    require "include.inc";
+    HTMLStart("About Page", false);
     HTMLNavigation();
-
     HTMLDecor();
-
 ?> 
+
         <main class="about-wrapper panel">
             <!-- Centers the text on page -->
             <section class="item vcenter">
@@ -32,11 +26,6 @@
         </main>
 
 <?php
-
-HTMLFooter();
-
-WrapperEnd();
-
-HTMLEnd();
-
+    HTMLFooter();
+    HTMLEnd();
 ?>

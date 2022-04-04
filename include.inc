@@ -1,40 +1,55 @@
-// Start + Title of program
+
 <?php
     // function for the start of an html page
-    function HTMLStart( $Title )
-    {
+    // the second argumment decides whether to add the <script> tag or not
+    function HTMLStart( $Title, $addScript ) {
 ?>
         <!DOCTYPE html>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
             <title><?php echo $Title ?></title>
+
+            <?php 
+                /* check if we need to link our javascript file */
+                if ($addScript) {echo "<script src='script.js' defer></script>";}
+
+                $pageName = basename($_SERVER['PHP_SELF']); /* this is the current page name */
+                
+                /* if the current page is "index.php", add the script tag that links an icon pack */
+                if ($pageName == "index.php") {
+                    echo "<!-- this is for an icon pack (used for image carousel) -->
+                        <script src='https://kit.fontawesome.com/78f9737a32.js' crossorigin='anonymous'></script>";
+                }
+            ?>
             <link href="style.css" type="text/css" rel="Stylesheet" />    
         </head>
         <body>
+
+            <div class="primary-wrapper">
 <?php
     }
 ?>
 
-// End of Program
+
+
 <?php
     // function for the end of an html page
-    function HTMLEnd()
-    {
+    function HTMLEnd() {
 ?>
+            </div> <!-- end of primary wrapper -->
         </body>
         </html>
 <?php
     }
 ?>
 
-// Nav Bar
+
+
 <?php
     // function for the Navigation Bar
-    function HTMLNavigation()
-    {
+    function HTMLNavigation() {
 ?>
-        <div class="primary-wrapper">
         <!-- NAV PANEL -->
         <nav class="nav-panel panel">
             <nav class="button"><a href="index.php">HOME</a></nav>
@@ -53,11 +68,10 @@
     }
 ?>
 
-// Aside Decor
+
 <?php
-    // function for decor
-    function HTMLDecor()
-    {
+    // function for side decor
+    function HTMLDecor() {
 ?>
         <aside class="left panel decor"></aside>
         <aside class="right panel decor"></aside>
@@ -65,39 +79,17 @@
     }
 ?>
 
-// Footer
+
+
 <?php
     // function for footer
-    function HTMLFooter()
-    {
+    function HTMLFooter() {
 ?>
         <footer class="panel">
             <span>COMP-205: Web-Based Application Development</span>
             <span>Spring 2022</span>
             <span>Group 5</span>
         </footer>
-<?php
-    }
-?>
-
-// Primary Wrapper Start
-<?php
-    // function for start of primary wrapper
-    function WrapperStart()
-    {
-?>
-        <div class="primary-wrapper">
-<?php
-    }
-?>
-
-// Primary Wrapper End
-<?php
-    // function for end of primary wrapper
-    function WrapperEnd()
-    {
-?>
-        </div>
 <?php
     }
 ?>

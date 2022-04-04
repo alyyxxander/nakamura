@@ -1,19 +1,13 @@
 <?php
-
-    include "include.inc";
-
-    HTMLStart( "Menu Page" );
-    
-    WrapperStart();
-
+    require "include.inc";
+    HTMLStart("Menu Page", false);
     HTMLNavigation();
-
     HTMLDecor();
-
 ?>
 
         <!-- MENU WRAPPER -->
         <main class="menu-wrapper">
+            
             <!-- Panel for drinks, both non-alcoholic and alcoholic -->
             <section class="drinks panel">
                 <div class="panel-title">NON-ALCOHOLIC</div>
@@ -22,14 +16,15 @@
                 <div class="item">Jasmine Green Tea - $2</div>
                 <div class="item">Black Tea - $2</div>
 
-                <!-- Splits non-alcoholic and alcoholic from each other -->
-                <hr> 
+                <hr> <!-- horizontal divider -->
 
                 <div class="panel-title">ALCOHOLIC</div>
                 <div class="item">Chardonnay - $8</div>
                 <div class="item">Sake - $7</div>
                 <div class="item">Ginger beer - $4</div>
             </section>
+            
+            
             <!-- Panel for Sushi -->
             <section class="sushi panel">
                 <div class="panel-title">
@@ -74,6 +69,7 @@
                 </div>
 
             </section>
+            
             <!-- Panel for Nigiri -->
             <section class="nigiri panel">
                 <div class="panel-title">
@@ -127,6 +123,7 @@
                 </div>
 
             </section>
+            
             <!-- Panel for Ramen -->
             <section class="ramen-sides">
                 <div class="ramen panel">
@@ -153,9 +150,9 @@
                             yuzu dashi chicken broth, thin noodle, shrimp wanton, menma, spinach, red cabbage
                         </div>
                     </div>
-
-
                 </div>
+
+
                 <!-- Panel for Sides -->
                 <div class="sides panel">
                     <div class="panel-title">SIDES</div>
@@ -182,6 +179,7 @@
                     </div>
                 </div>
             </section>
+            
             <!-- Panel for Small Plates -->
             <section class="small-plates panel">
                 <div class="panel-title">
@@ -241,8 +239,9 @@
                         *temporary description*
                     </div>
                 </div>
-
             </section>
+
+
             <!-- Panel for References -->
             <section class="reference panel">
                 <div class="panel-title">REFERENCE</div>
@@ -257,29 +256,21 @@
                 <div class="item">
                     <div class="name">Sushi</div>
                     <div class="description">
-                        Sushi features the meat and adds rice and other ingredients, such as vegetables, which are all
-                        rolled up in a sheet of nori (seaweed) and then sliced into pieces.
+                        Sushi features the meat and adds rice and other ingredients, such as vegetables, which are all rolled up in a sheet of nori (seaweed) and then sliced into pieces.
                     </div>
                 </div>
 
                 <div class="item">
                     <div class="name">Nigiri</div>
                     <div class="description">
-                        Nigiri is a dish that's halfway in between sashimi and sushi. Nigiri is sashimi that's served on
-                        a molded rectangle of rice.
+                        Nigiri is a dish that's halfway in between sashimi and sushi. Nigiri is sashimi that's served on a molded rectangle of rice.
                     </div>
                 </div>
-
             </section>
 
         </main>
 
 <?php
-
     HTMLFooter();
-
-    WrapperEnd();
-
     HTMLEnd();
-
 ?>
