@@ -23,10 +23,6 @@ body {
 
 
 
-
-
-
-
 /* ========== PRIMARY PAGE STRUCTURE ========== */
 .primary-wrapper {
 	display: grid;
@@ -317,21 +313,18 @@ hr {
     margin: 8px 0;
 }
 
-.carousel-tile img {
-    width: 92%;
-    max-width: 450px;
-	border-radius: 5px;
-	margin-top: 10px;
-    object-fit: cover;
+.carousel-container img {
+	border-radius: 8px;
+	min-height: 375px;
 }
 
 .carousel-tile {
 	background-color: #c9c9c9;
 	border-radius: 5px;
-	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	padding: 20px;
 }
 
 .carousel-tile h2 {
@@ -344,6 +337,7 @@ hr {
 	grid-template-columns: 1fr 2fr;
     gap: 5px;
 }
+
 
 #prev, #next {
   color:#595959;
