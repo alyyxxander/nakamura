@@ -21,7 +21,7 @@
         <div class="carousel-container">
             <div class="panel">
                 <h1>Small Plates</h1>
-                <h3>These are our speciality small plates</h3>
+                <h3>These are our speciality small plate</h3>
                 <h3>Click arrow icons on the sides to browse</h3>
             </div>
 
