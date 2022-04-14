@@ -17,7 +17,7 @@
     <h1>alcoholic (21+)</h1>
     <div id="chardonnay" class="item" draggable="true" data-price="8.00">Chardonnay - $8</div>
 
-    <div id="sakeDrink" class="item" draggable="true" data-price="7.00">Sake- $7</div>
+    <div id="sakeDrink" class="item" draggable="true" data-price="7.00">Sake - $7</div>
 
     <div id="gingerBeer" class="item" draggable="true" data-price="4.00">Ginger Beer - $4</div>
 
