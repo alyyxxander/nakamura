@@ -4,6 +4,16 @@
     HTMLNavigation();
     HTMLDecor();
 ?>
+        <style>
+            .menu-wrapper .panel {
+	            /* background-color: #741c1c; */
+                border: 2px solid #741c1c;
+            }
+            /* .panel-title {
+                color: white;
+            } */
+        </style>
+
 
         <!-- MENU WRAPPER -->
         <main class="menu-wrapper">
