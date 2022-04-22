@@ -113,8 +113,7 @@ function doubleClick() {
     }
 }
 
-
-
+//====================================== FUNCTIONS FOR TAKEOUT & ORDERING
 function removeFromCart(itemID) {
 
     //get the item from the cart
@@ -252,11 +251,14 @@ function getPanel(panelFileName, outputID) {
 }
 
 function resetItemListeners() {
+    console.log("Resetting item listeners...");
+
     //reset list of nodes with the class "item"
     itemList = document.querySelectorAll(".item");
 
     //loop through every item in the list and add drag listeners
     for (var item of itemList) {
+        console.log("item: " + item);
         item.addEventListener("dragstart", dragStart);
         item.addEventListener("dragend", dragEnd);
     }
@@ -267,7 +269,6 @@ function clearPanelContent() {
     var panel = document.getElementById("category-panel");
     panel.innerHTML = "";
 }
-
 
 
 
@@ -303,3 +304,50 @@ function showNextTile(addToIndex) {
     //since all tiles are hidden, we will only show the image at the selected index be shown
     itemTiles[tileIndex].style.display = "flex";
 }
+
+
+
+//====================================== CODE FOR PHP STUFF
+function loadMenu(category, outputID) {
+    // declare local variables
+	var xmlhttp;
+
+	// create the request object depending on the browser type
+	if (window.XMLHttpRequest) {
+		// code for IE7+, Firefox, Chrome, Safari, Opera
+		xmlhttp = new XMLHttpRequest();
+	} else {
+		// code for IE6 and earlier - need to use an ActiveX object (yuck!)
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	// set the callback function. this function inserts the html that
+	//      is received into the "info" section of the page
+	xmlhttp.onreadystatechange = function () {
+		// check for a good return
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+			// add the received html to the info section
+			document.getElementById(outputID).innerHTML = xmlhttp.responseText;
+		}
+	};
+
+	// create the request
+	xmlhttp.open("POST", "menu-DB.php", true);
+
+	// this set the content of the http pack mime type so that PHP can process it correctly
+	xmlhttp.setRequestHeader(
+		"Content-type",
+		"application/x-www-form-urlencoded"
+	);
+	var Argument = "Category=" + category;
+
+	// send the request to the server
+	xmlhttp.send(Argument);
+
+    resetItemListeners();
+}
+
+
+
+
+

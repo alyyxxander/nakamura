@@ -44,7 +44,7 @@
                 <div class="item">
                     <div class="name">Tiger Roll - $9.99</div>
                     <div class="description">
-                        Avocado, shrimp tempura, cucumber, tobiko (flying fish roe — fish eggs)
+                        Avocado, shrimp tempura, cucumber, tobiko (flying fish roe - fish eggs)
                     </div>
                 </div>
                 <div class="item">

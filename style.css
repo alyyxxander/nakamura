@@ -14,12 +14,6 @@ body {
       -> Basically, the only thing that varies between pages is the content in <main>
 */
 
-/*  References:
-        -> for carousel on homepage:
-                https://tinyurl.com/yrxu7but
-
-*/
-
 
 
 
@@ -183,6 +177,7 @@ hr {
 .debug {
 	background-color: #edff29;
 	border: 3px solid black;
+	padding: 5px;
 }
 
 
