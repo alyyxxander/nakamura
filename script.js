@@ -321,14 +321,16 @@ function loadMenu(category, outputID) {
 		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 	}
 
-	// set the callback function. this function inserts the html that
-	//      is received into the "info" section of the page
+	// set the callback function. this function inserts the html that is received into the page
 	xmlhttp.onreadystatechange = function () {
 		// check for a good return
 		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 			// add the received html to the info section
 			document.getElementById(outputID).innerHTML = xmlhttp.responseText;
+            resetItemListeners();
 		}
+
+        
 	};
 
 	// create the request
@@ -344,7 +346,6 @@ function loadMenu(category, outputID) {
 	// send the request to the server
 	xmlhttp.send(Argument);
 
-    resetItemListeners();
 }
 
 

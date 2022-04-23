@@ -36,8 +36,6 @@ $Results = $Connection->query($SQL);
 //    $Results will evaluate to true if there data is returned from the database, false if no data is returned
 if ($Results) {
 
-    echo "<table class='menu-table'>";
-
     // loop through the results
     //      the fecth_row method returns an array of the column
     //      data - one item in the array for each column in the
@@ -47,26 +45,19 @@ if ($Results) {
     //      when there are no more rows
 
 
+    echo "<div class='takeout-panel'>\n";
+
+    //id = $Row[1], price = $Row[2], itemName = $Row[3]
     while ($Row = $Results->fetch_row()) {
-        // add  table row
-        echo "   <tr";
-
-        //id will be whatever value is in the "itemId" column in the DB
-        echo " id='" . $Row[1] . "'";
-
-        echo " draggable='true'  class='item'";
-        echo " data-price='" . $Row[2] . "'";
-        echo ">\n";
-
-        echo "      <td>" . $Row[3] . "</td>\n";
-        echo "      <td class='menu-price alignright'>$" . $Row[2] . "</td>";
-
-        echo "   </tr>\n";
+        echo "<div id='" . $Row[1] . "' draggable='true' class='item' data-price='" . $Row[2] . "'>\n";
+        echo "    " . $Row[3] . " - " . $Row[2] . "\n";
+        echo "</div>";
     }
+    
+    echo "</div>";
 
 
 
-    echo "</table>";
 } else {
     // no results returned
     echo "<p>No results returned from the query</p>\n";
