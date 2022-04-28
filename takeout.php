@@ -29,18 +29,6 @@
         </details>
 
 
-        <!-- NOTE: DONT GET RID OF THE JS VERSION YET -->
-
-        <!-- JS VERSION -->
-        <!-- <div class="category-button-panel">
-            <button class="button" onclick="getPanel('takeout-panels/beveragePanel.php', 'category-panel');">beverages</button>
-            <button class="button" onclick="getPanel('takeout-panels/sushiPanel.php', 'category-panel');">sushi</button>
-            <button class="button" onclick="getPanel('takeout-panels/nigiriPanel.php', 'category-panel');">nigiri</button>
-            <button class="button" onclick="getPanel('takeout-panels/ramenPanel.php', 'category-panel');">ramen</button>
-            <button class="button" onclick="getPanel('takeout-panels/sidesPanel.php', 'category-panel');">sides</button>
-            <button class="button" onclick="getPanel('takeout-panels/smallplatesPanel.php', 'category-panel');">small plates</button>
-        </div> -->
-
         <!-- PHP VERSION -->
         <div class="category-button-panel">
             <button class="button" onclick="loadMenu('drink', 'category-panel');">beverages</button>

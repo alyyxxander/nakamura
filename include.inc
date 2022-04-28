@@ -1,8 +1,6 @@
 <?php
-// function for the start of an html page
 // the second argumment decides whether to add the <script> tag or not
-function HTMLStart($Title, $addScript)
-{
+function HTMLStart($Title, $addScript) {
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -31,31 +29,27 @@ function HTMLStart($Title, $addScript)
     <body>
 
         <div class="primary-wrapper">
-        <?php
-    }
-        ?>
-
-
-
-        <?php
-        // function for the end of an html page
-        function HTMLEnd()
-        {
-        ?>
-        </div> <!-- end of primary wrapper -->
-    </body>
-
-    </html>
 <?php
-        }
+}
 ?>
 
 
 
 <?php
-// function for the Navigation Bar
-function HTMLNavigation()
-{
+function HTMLEnd() {
+?>
+        </div> <!-- end of primary wrapper -->
+    </body>
+
+    </html>
+<?php
+}
+?>
+
+
+
+<?php
+function HTMLNavigation() {
 ?>
     <!-- NAV PANEL -->
     <nav class="nav-panel panel">
@@ -77,9 +71,7 @@ function HTMLNavigation()
 
 
 <?php
-// function for side decor
-function HTMLDecor()
-{
+function HTMLDecor() {
 ?>
     <aside class="left panel decor"></aside>
     <aside class="right panel decor"></aside>
@@ -90,9 +82,7 @@ function HTMLDecor()
 
 
 <?php
-// function for footer
-function HTMLFooter()
-{
+function HTMLFooter() {
 ?>
     <footer class="panel">
         <span>COMP-205: Web-Based Application Development</span>
@@ -110,7 +100,7 @@ function connectToDatabase() {
     $Server = "localhost";
     $UserName = "root";
     $Password = "root";
-    $Database = "menu_items";
+    $Database = "nakamura";
 
     // connect to the database
     //      create a new instance of a mysqli object. this

@@ -115,6 +115,12 @@ nav.nav-panel {
 	grid-template-columns: 2fr 2px 1fr;
 }
 
+.login-wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 /* ========== COMMON ELEMENTS & CLASSES ========== */
 .panel {
 	padding: 10px;
@@ -190,50 +196,8 @@ hr {
 	grid-area: top-panel;
 }
 
-
-
-
-.ramen-sides {
-	grid-area: r-and-s;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 5px;
-}
-
-.sides {
-	grid-template-rows: min-content;
-}
-
-.drinks {
-	grid-area: drinks;
-	text-align: center;
-}
-
-.drinks .item {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
 .reference {
 	grid-area: reference;
-}
-
-.sushi {
-	grid-area: sushi;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 30px 1fr 1fr;
-}
-
-.nigiri {
-	grid-area: nigiri;
-	grid-template-columns: repeat(3, 1fr);
-}
-
-.small-plates {
-	grid-area: small-plates;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 30px 1fr 1fr 1fr;
 }
 
 .item .name, .button {
@@ -253,11 +217,6 @@ hr {
 
 .reference .item {
 	text-align: left;
-}
-
-.sushi .panel-title, .nigiri .panel-title, .small-plates .panel-title {
-	/* have the panel title span of all columns in the first row */
-	grid-column: 1/4;
 }
 
 .panel-title span {
@@ -540,3 +499,27 @@ details summary {
 	min-height: 50px;
 }
 
+
+
+
+
+/* ========== ELEMENT IN LOGIN PAGE ========== */
+
+.login-form, .signup-form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5px;
+}
+
+.login-wrapper.panel h1, .signup-wrapper h1 {
+	height: min-content;
+}
+
+input {
+	height: 20px;
+}
+
+.login-wrapper a, .signup-wrapper a {
+	display: inline;
+}
