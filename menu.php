@@ -8,8 +8,6 @@ HTMLDecor();
 <!-- MENU WRAPPER -->
 <main class="menu-wrapper">
 
-        
-
         <div class="menu-top-panel">
             <!-- PHP VERSION -->
             <div class="category-button-panel">

@@ -1,10 +1,10 @@
 <?php
 
 //====================================== SIGN UP FUNCTIONS
-function emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) {
+function emptyInputSignup($name, $email, $username, $password, $passwordRepeat) {
     $result = false;
 
-    if (empty($name) || empty($email) || empty($username) || empty($pwd) || empty($pwdRepeat)) {
+    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($passwordRepeat)) {
         $result = true;  }
         
     return $result;
@@ -49,7 +49,7 @@ function usernameTaken($connection, $username, $email) {
     $statement = mysqli_stmt_init($connection);
 
     //run the sql statement inside the DB and see if it throws an error
-    if (!mysql_stmt_prepare($statement, $sql)) {
+    if (!mysqli_stmt_prepare($statement, $sql)) {
         //if it does throw an error...
         header("location: ../signup.php?error=stmtfailed");
         exit();
@@ -79,7 +79,7 @@ function usernameTaken($connection, $username, $email) {
     mysqli_stmt_close($statement);
 }
 
-function createUser($connection, $name, $email, $username, $pwd) {
+function createUser($connection, $name, $email, $username, $password) {
 
     //the question marks are just placeholders
     $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
@@ -92,7 +92,7 @@ function createUser($connection, $name, $email, $username, $pwd) {
         exit();
     } 
 
-    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
+    $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
 
     //the 2nd parameter is asking what kind of data you're submitting
     //      4 strings being submitted ==> "ssss" 
@@ -111,16 +111,19 @@ function createUser($connection, $name, $email, $username, $pwd) {
 
 
 //====================================== LOG IN FUNCTIONS
-function emptyInputLogin($username, $pwd) {
+function emptyInputLogin($username, $password) {
     $result = false;
 
-    if (empty($username) || empty($pwd)) {
+    if (empty($username) || empty($password)) {
         $result = true;  }
         
     return $result;
 }
 
 function logInUser($connection, $username, $password) {
+
+    //usernameTaken will return "false" if no user exists in the DB with the given username or email
+    //if a user DOES exists with said innfo, it'll return a string array with the users info
     $uidExists = usernameTaken($connection, $username, $username);
 
     //check if a user exists in the DB with the given username or email

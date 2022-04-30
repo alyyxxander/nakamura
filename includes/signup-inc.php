@@ -38,8 +38,8 @@ if (isset($_POST["submit"])) {
     }
 
     //check if the user submitted a valid username
-    if (invalidUid($username) !== false) {
-        header("location: ../signup.php?error=invaliduid");
+    if (invalidUsername($username) !== false) {
+        header("location: ../signup.php?error=invalidusername");
         exit();
     }
 

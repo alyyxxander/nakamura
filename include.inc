@@ -64,6 +64,19 @@ function HTMLNavigation() {
         <nav class="button"><a href="menu.php">MENU</a></nav>
 
         <nav class="button"><a href="takeout.php">ORDER</a></nav>
+
+        
+        <?php
+            //if a user is logged in, show the "Log Out" button
+            if (isset($_SESSION["useruid"])) {
+                echo "<nav class='button'><a href='includes/logout-inc.php'>LOG OUT</a></nav>";
+            } 
+            //if a user is NOT logged in, show the "Log In" button
+            else {
+                echo "<nav class='button'><a href='login.php'>LOG IN</a></nav>";
+            }
+        ?>
+
     </nav>
 <?php
 }
@@ -97,22 +110,22 @@ function HTMLFooter() {
 <?php
 function connectToDatabase() {
     // set the connection information
-    $Server = "localhost";
-    $UserName = "root";
-    $Password = "root";
-    $Database = "nakamura";
+    $server = "localhost";
+    $username = "root";
+    $password = "root";
+    $database = "nakamura";
 
     // connect to the database
     //      create a new instance of a mysqli object. this
     //      object contains the connection to the mysql server
-    $Connection = new mysqli($Server, $UserName, $Password, $Database);
+    $connection = new mysqli($server, $username, $password, $database);
 
     // check for a successful connection
     //      connect_error will evaluate to true if there is an error
-    if ($Connection->connect_error) {
+    if ($connection->connect_error) {
         // stop the script and echo an error message
-        echo "<h2>Database Error</h2>\n";
-        die("MySQLi Connection Error: " . $Connection->connect_error . "\n");
+        echo "<h2>Database Error!</h2>\n";
+        die("MySQLi Connection Error: " . $connection->connect_error . "\n");
     }
 }
 ?>

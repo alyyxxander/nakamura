@@ -2,7 +2,7 @@
 
 if (isset($_POST["submit"])) {
 
-    $username = $_POST["username"];
+    $userID = $_POST["userID"];
     $password = $_POST["password"];
     
     require_once 'dbHandler-inc.php';
@@ -10,12 +10,12 @@ if (isset($_POST["submit"])) {
 
     //check for errors. we cann add as manny error handlers as we want here,
     //but im only checking for empty inputs rn
-    if (emptyInputLogin($username, $password) !== false) {
+    if (emptyInputLogin($userID, $password) !== false) {
         header("location: ../login.php?error=emptyinput");
         exit();
     }
 
-    loginUser($connection, $username, $password);
+    loginUser($connection, $userID, $password);
 } else {
     header("location: ../login.php");
     exit();

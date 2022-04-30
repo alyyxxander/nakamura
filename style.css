@@ -71,7 +71,7 @@ main {
 }
 
 nav.nav-panel {
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	grid-area: nav;
 }
 
@@ -115,9 +115,7 @@ nav.nav-panel {
 	grid-template-columns: 2fr 2px 1fr;
 }
 
-.login-wrapper {
-	display: flex;
-	align-items: center;
+.login-wrapper, .signup-wrapper {
 	justify-content: center;
 }
 
@@ -281,6 +279,8 @@ hr {
 .carousel-container img {
 	border-radius: 8px;
 	min-height: 375px;
+	max-width: 500px;
+	object-fit: cover;
 }
 
 .carousel-tile {
@@ -503,17 +503,11 @@ details summary {
 
 
 
-/* ========== ELEMENT IN LOGIN PAGE ========== */
-
-.login-form, .signup-form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 5px;
-}
+/* ========== ELEMENT IN LOGIN/SIGN UP PAGE ========== */
 
 .login-wrapper.panel h1, .signup-wrapper h1 {
 	height: min-content;
+	margin-bottom: 0;
 }
 
 input {
@@ -521,5 +515,28 @@ input {
 }
 
 .login-wrapper a, .signup-wrapper a {
-	display: inline;
+	display: inline-flex;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.error-message {
+	background-color: #ff8484;
+	text-align: center;
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.submit {
+	background-color: #741c1c;
+	border-radius: 5px;
+	color: white; /* text color */
+	font-family: "Redressed", cursive;
+	font-size: large;
 }
