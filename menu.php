@@ -1,8 +1,9 @@
 <?php
-require "include.inc";
-HTMLStart("Menu Page", true);
-HTMLNavigation();
-HTMLDecor();
+    require "include.inc";
+    session_start();
+    HTMLStart("Menu Page", true);
+    HTMLNavigation();
+    HTMLDecor();
 ?>
 
 <!-- MENU WRAPPER -->
@@ -54,6 +55,6 @@ HTMLDecor();
 </main>
 
 <?php
-HTMLFooter();
-HTMLEnd();
+    HTMLFooter();
+    HTMLEnd();
 ?>

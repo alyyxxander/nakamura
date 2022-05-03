@@ -1,5 +1,6 @@
 <?php
     require "include.inc";
+    session_start();
     HTMLStart("Map Page", false);
     HTMLNavigation();
     HTMLDecor();

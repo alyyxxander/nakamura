@@ -251,14 +251,12 @@ function getPanel(panelFileName, outputID) {
 }
 
 function resetItemListeners() {
-    console.log("Resetting item listeners...");
 
     //reset list of nodes with the class "item"
     itemList = document.querySelectorAll(".item");
 
     //loop through every item in the list and add drag listeners
     for (var item of itemList) {
-        console.log("item: " + item);
         item.addEventListener("dragstart", dragStart);
         item.addEventListener("dragend", dragEnd);
     }
@@ -309,6 +307,18 @@ function showNextTile(addToIndex) {
 
 //====================================== CODE FOR PHP STUFF
 function loadMenu(category, outputID) {
+
+    //check if the category that was clicked on is already openn
+    if (categoryOpen == category) {
+        //if its already open, close it and dont run any of the code below
+        document.getElementById(outputID).innerHTML = "";
+        categoryOpen = "";
+        return;
+    }
+
+
+
+
     // declare local variables
 	var xmlhttp;
 
@@ -328,6 +338,7 @@ function loadMenu(category, outputID) {
 			// add the received html to the info section
 			document.getElementById(outputID).innerHTML = xmlhttp.responseText;
             resetItemListeners();
+            categoryOpen = category;
 		}
 
         
@@ -348,6 +359,8 @@ function loadMenu(category, outputID) {
 
 }
 
+
+var categoryOpen = "";
 
 
 

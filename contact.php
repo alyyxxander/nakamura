@@ -1,5 +1,6 @@
 <?php
     require "include.inc";
+    session_start();
     HTMLStart("Contact Page", false);
     HTMLNavigation();
     HTMLDecor();

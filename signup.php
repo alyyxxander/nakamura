@@ -1,13 +1,12 @@
 <?php
-require "include.inc";
-HTMLStart("Sign Up", true);
-HTMLNavigation();
-HTMLDecor();
+    require "include.inc";
+    session_start();
+    HTMLStart("Sign Up", true);
+    HTMLNavigation();
+    HTMLDecor();
 ?>
 
 <main class="signup-wrapper panel">
-
-
 
     <div class="signup-form">
 
@@ -67,6 +66,6 @@ HTMLDecor();
 </main>
 
 <?php
-HTMLFooter();
-HTMLEnd();
+    HTMLFooter();
+    HTMLEnd();
 ?>

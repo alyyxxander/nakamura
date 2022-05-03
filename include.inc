@@ -7,7 +7,7 @@ function HTMLStart($Title, $addScript) {
 
     <head>
         <meta charset="UTF-8">
-        <title><?php echo $Title ?></title>
+        <title><?php echo $Title; ?></title>
 
         <?php
         /* check if we need to link our javascript file */
@@ -64,7 +64,6 @@ function HTMLNavigation() {
         <nav class="button"><a href="menu.php">MENU</a></nav>
 
         <nav class="button"><a href="takeout.php">ORDER</a></nav>
-
         
         <?php
             //if a user is logged in, show the "Log Out" button

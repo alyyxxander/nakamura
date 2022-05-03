@@ -427,6 +427,7 @@ details summary {
 	grid-auto-rows: min-content;
 	color: #741c1c; /* text color */
 	font-weight: bold;
+	overflow-y: scroll;
 }
 
 .invisible {

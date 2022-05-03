@@ -1,5 +1,6 @@
 <?php
     require "include.inc";
+    session_start();
     HTMLStart("Log In", true);
     HTMLNavigation();
     HTMLDecor();
