@@ -62,7 +62,6 @@
         <p>Already have an account? Log in <a href="login.php">here</a>!</p>
     </div>
 
-
 </main>
 
 <?php

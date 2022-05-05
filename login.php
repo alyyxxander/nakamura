@@ -13,11 +13,8 @@
         <h1>LOG IN HERE!</h1> <br>
 
         <form action="includes/login-inc.php" method="post">
-        
             <input type="text" name="userID" placeholder="Username or Email"> <br>
-
             <input type="password" name="password" placeholder="Password"> <br>
-
             <button type="submit" name="submit" class="submit">~ Log In ~</button>
         </form> <br>
 
@@ -46,9 +43,6 @@
 
         <p>Don't have an account? Sign up <a href="signup.php">here</a>!</p>
     </div> 
-
-    
-
 
 </main>
 

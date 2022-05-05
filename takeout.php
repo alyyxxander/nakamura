@@ -12,7 +12,6 @@
     <section class="takeout-menu" id="takeout-menu">
         <h1>TAKEOUT MENU</h1>
 
-        <!-- NOTE: finish fixing the formatting for this toggle -->
         <details class="direction-toggle">
             <summary>directions</summary>
 
@@ -29,8 +28,6 @@
             </div>
         </details>
 
-
-        <!-- PHP VERSION -->
         <div class="category-button-panel">
             <button class="button" onclick="loadMenu('drink', 'category-panel');">beverages</button>
             <button class="button" onclick="loadMenu('alcoholic-drink', 'category-panel');">alcoholic beverages</button>
@@ -44,12 +41,9 @@
         <!-- this is where the panel of items will appear -->
         <div id="category-panel"></div>
 
-
     </section> <!-- end of takeout menu (left panel) -->
 
-
     <div class="vertical-divider"></div>
-
 
     <!-- ======== RIGHT PANEL ======== -->
     <section class="cart-panel">
@@ -73,14 +67,8 @@
             <span id="total">$0.00</span>
         </div>
 
-
-        <button onclick="emptyCart();">
-            CLEAR ORDER
-        </button>
-
-        <button onclick="placeOrder();">
-            PLACE ORDER
-        </button>
+        <button onclick="emptyCart();">CLEAR ORDER</button>
+        <button onclick="placeOrder();">PLACE ORDER</button>
 
     </section> <!-- end of user cart (right panel) -->
 

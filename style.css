@@ -495,12 +495,16 @@ details summary {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
 	text-align: center;
-	min-height: 50px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
-
+.dir_inner_box {
+	font-family: "Yanone Kaffeesatz", sans-serif;
+	font-size: 15pt;
+	color: black;
+}
 
 
 

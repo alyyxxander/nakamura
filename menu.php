@@ -9,21 +9,21 @@
 <!-- MENU WRAPPER -->
 <main class="menu-wrapper">
 
-        <div class="menu-top-panel">
-            <!-- PHP VERSION -->
-            <div class="category-button-panel">
-                <button class="button" onclick="loadMenu('drink', 'category-panel');">beverages</button>
-                <button class="button" onclick="loadMenu('alcoholic-drink', 'category-panel');">alcoholic beverages</button>
-                <button class="button" onclick="loadMenu('sushi', 'category-panel');">sushi</button>
-                <button class="button" onclick="loadMenu('nigiri', 'category-panel'); resetItemListeners();">nigiri</button>
-                <button class="button" onclick="loadMenu('ramen', 'category-panel');">ramen</button>
-                <button class="button" onclick="loadMenu('side', 'category-panel');">sides</button>
-                <button class="button" onclick="loadMenu('small-plate', 'category-panel');">small plates</button>
-            </div>
-    
-            <!-- this is where the panel of items will appear -->
-            <div id="category-panel"></div>
+    <div class="menu-top-panel">
+        <!-- PHP VERSION -->
+        <div class="category-button-panel">
+            <button class="button" onclick="loadMenu('drink', 'category-panel');">beverages</button>
+            <button class="button" onclick="loadMenu('alcoholic-drink', 'category-panel');">alcoholic beverages</button>
+            <button class="button" onclick="loadMenu('sushi', 'category-panel');">sushi</button>
+            <button class="button" onclick="loadMenu('nigiri', 'category-panel');">nigiri</button>
+            <button class="button" onclick="loadMenu('ramen', 'category-panel');">ramen</button>
+            <button class="button" onclick="loadMenu('side', 'category-panel');">sides</button>
+            <button class="button" onclick="loadMenu('small-plate', 'category-panel');">small plates</button>
         </div>
+
+        <!-- this is where the panel of items will appear -->
+        <div id="category-panel"></div>
+    </div>
 
 
     <!-- Panel for References -->

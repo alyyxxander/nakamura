@@ -1,5 +1,4 @@
 
-
 // variable to hold the total # of items in users cart
 var itemsInCart = 0;
 
@@ -32,6 +31,7 @@ if (userCart != null) {
     userCart.addEventListener("dragleave", dragLeave);
     userCart.addEventListener("drop", dragDrop);
 }
+
 
 
 //====================================== USER INTERACTION FUNCTIONS
@@ -112,6 +112,8 @@ function doubleClick() {
         removeFromCart(doubleClickedID);
     }
 }
+
+
 
 //====================================== FUNCTIONS FOR TAKEOUT & ORDERING
 function removeFromCart(itemID) {
@@ -201,55 +203,7 @@ function placeOrder() {
     emptyCart();
 }
 
-//function to get a takeout panel of items
-function getPanel(panelFileName, outputID) {
-
-    //if the new panel requested is already on the page, hide it instead of loading it again
-    if (currentPanel == panelFileName) {
-        clearPanelContent();
-        currentPanel = "";
-        return;
-    }
-
-    // declare local variables
-    var xmlhttp;
-
-    // create the request object depending on the browser type
-    if (window.XMLHttpRequest) {
-        // code for IE7+, Firefox, Chrome, Safari, Opera
-        xmlhttp = new XMLHttpRequest;
-    } else {
-        // code for IE6 and earlier - need to use an ActiveX object (yuck!)
-        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    // set the callback function. this function inserts the html that
-    //      is received into the "category-panel" section of the page. It is
-    //      a callback function because the XMLHttpRequest object
-    //      calls this function when the ready state changes and it
-    //      is provided by the user of the object.
-    xmlhttp.onreadystatechange = function () {
-        // check for a good return
-        if ((xmlhttp.readyState == 4) &&
-            (xmlhttp.status == 200)) {
-            // add the received html to the category-panel section
-            document.getElementById(outputID).innerHTML = xmlhttp.responseText;
-
-            resetItemListeners();
-            currentPanel = panelFileName;
-        }
-    }
-
-    // create the request. this creates a HTTP GET request for the file name in the second parameter.
-    // the final parameter is whether the request is synchronous or asynchronous. generally use asynchronous (true). 
-    // also note that you don't need the complete https:// on the file name if you are getting something from the same server. 
-    // if you are not, you WILL need the fully qualified path.
-    xmlhttp.open("GET", panelFileName, true);
-
-    // send the request to the server
-    xmlhttp.send();
-}
-
+//function to add drag listeners to all items
 function resetItemListeners() {
 
     //reset list of nodes with the class "item"
@@ -260,12 +214,6 @@ function resetItemListeners() {
         item.addEventListener("dragstart", dragStart);
         item.addEventListener("dragend", dragEnd);
     }
-}
-
-//function to clear the panel of items on the takeout page
-function clearPanelContent() {
-    var panel = document.getElementById("category-panel");
-    panel.innerHTML = "";
 }
 
 
@@ -316,9 +264,6 @@ function loadMenu(category, outputID) {
         return;
     }
 
-
-
-
     // declare local variables
 	var xmlhttp;
 
@@ -359,9 +304,6 @@ function loadMenu(category, outputID) {
 
 }
 
-
+//holds the name of the menu or takeout category thats currently being displayed
 var categoryOpen = "";
-
-
-
 

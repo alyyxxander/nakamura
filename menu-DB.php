@@ -50,7 +50,7 @@ if ($Results) {
     //id = $Row[1], price = $Row[2], itemName = $Row[3]
     while ($Row = $Results->fetch_row()) {
         echo "<div id='" . $Row[1] . "' draggable='true' class='item' data-price='" . $Row[2] . "'>\n";
-        echo "    " . $Row[3] . " - " . $Row[2] . "\n";
+        echo "    " . $Row[3] . " - $" . $Row[2] . "\n";
         echo "</div>";
     }
     
