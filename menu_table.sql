@@ -6,7 +6,7 @@ create table menu_items (
     id              int AUTO_INCREMENT,
     itemId          varchar(50),
     category        varchar(20),
-    itemName           varchar(50),
+    itemName        varchar(50),
     description     text(21845),
     price           decimal(10,2),
     constraint menu_items_pk

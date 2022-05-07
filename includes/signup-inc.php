@@ -6,11 +6,18 @@
 if (isset($_POST["submit"])) {
 
     //get the variables from the submitted form
-    $name = $_POST["name"];
+    $firstName = $_POST["firstName"];
+    $lastName = $_POST["lastName"];
     $email = $_POST["email"];
     $username = $_POST["username"];
     $password = $_POST["password"];
     $passwordRepeat = $_POST["passwordRepeat"];
+
+    $address = $_POST["address"];
+    $city = $_POST["city"];
+    $state = $_POST["state"];
+    $zipCode = $_POST["zipCode"];
+
 
     require_once 'dbHandler-inc.php';
     require_once 'functions-inc.php';
@@ -32,7 +39,7 @@ if (isset($_POST["submit"])) {
     
 
     //check if all fields are filled out
-    if (emptyInputSignup($name, $email, $username, $password, $passwordRepeat) !== false) {
+    if (emptyInputSignup($firstName, $lastName, $email, $username, $password, $passwordRepeat, $address, $city, $state, $zipCode) !== false) {
         header("location: ../signup.php?error=emptyinput");
         exit();
     }
@@ -61,8 +68,15 @@ if (isset($_POST["submit"])) {
         exit();
     }
 
+    //check if the user submitted a valid zip code
+    if (invalidZip($zipCode) !== false) {
+        header("location: ../signup.php?error=invalidZip");
+        exit();
+    }
+
+
     //if none of the errors were thrown, the info should all be valid and we can create a new user
-    createUser($connection, $name, $email, $username, $password);
+    createUser($connection, $firstName, $lastName, $email, $username, $password, $address, $city, $state, $zipCode);
 
 } else {
     //send the user back to the signup page

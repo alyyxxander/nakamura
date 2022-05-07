@@ -97,9 +97,23 @@ function HTMLDecor() {
 function HTMLFooter() {
 ?>
     <footer class="panel">
-        <span>COMP-205: Web-Based Application Development</span>
-        <span>Spring 2022</span>
-        <span>Group 5</span>
+
+        <?php
+            //if a user is logged in, show a welcome message in the footer
+            if (isset($_SESSION["useruid"])) {
+                echo "<span> </span>";
+                echo "<span>What's up, ".$_SESSION["userfirstname"]." ".$_SESSION["userlastname"];
+                echo "!</span>";
+                echo "<span> </span>";
+            } 
+            //if a user is NOT logged in, show the default footer
+            else {
+                echo "<span>COMP-205: Web-Based Application Development</span>";
+                echo "<span>Spring 2022</span>";
+                echo "<span>Group 5</span>";
+            }
+        ?>
+
     </footer>
 <?php
 }

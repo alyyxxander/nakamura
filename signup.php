@@ -14,11 +14,16 @@
 
         <form action="includes/signup-inc.php" method="post">
             <!-- placeholder is the temporary text that tells the user what to input -->
-            <input type="text" name="name" placeholder="Full Name"> <br>
+            <input type="text" name="firstName" placeholder="First Name"> <br>
+            <input type="text" name="lastName" placeholder="Last Name"> <br>
             <input type="text" name="email" placeholder="Email"> <br>
             <input type="text" name="username" placeholder="Username"> <br>
             <input type="password" name="password" placeholder="Password"> <br>
             <input type="password" name="passwordRepeat" placeholder="Repeat Password"> <br>
+            <input type="text" name="address" placeholder="Address"> <br>
+            <input type="text" name="city" placeholder="City"> <br>
+            <input type="text" name="state" placeholder="State"> <br>
+            <input type="number" name="zipCode" placeholder="Zip Code"> <br>
             <button type="submit" name="submit" class="submit">~ Sign Up ~</button>
         </form>
 
@@ -47,6 +52,10 @@
             //error due to username being takenn
             else if ($_GET["error"] == "usernametaken") {
                 echo "<p class='error-message'>Error! Username is already taken!</p>";
+            }
+            //error due to invalid zip code
+            else if ($_GET["error"] == "invalidZip") {
+                echo "<p class='error-message'>Error! Invalid zip code! Must be in 12345 format.</p>";
             }
             //error due to sql statement failing
             else if ($_GET["error"] == "stmtfailed") {

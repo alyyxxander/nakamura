@@ -1,10 +1,11 @@
 <?php
 
 //====================================== SIGN UP FUNCTIONS
-function emptyInputSignup($name, $email, $username, $password, $passwordRepeat) {
+function emptyInputSignup($firstName, $lastName, $email, $username, $password, $passwordRepeat, $address, $city, $state, $zipCode) {
     $result = false;
 
-    if (empty($name) || empty($email) || empty($username) || empty($password) || empty($passwordRepeat)) {
+    if (empty($firstName) || empty($email) || empty($username) || empty($password) || empty($passwordRepeat)
+        || empty($lastName) || empty($address) || empty($city) || empty($state) || empty($zipCode)) {
         $result = true;  }
         
     return $result;
@@ -39,6 +40,23 @@ function passwordMatch($password, $passwordRepeat) {
 
     return $result;
 }
+
+
+
+function invalidZip($zipCode) {
+    $result = false;
+
+    //checks if $zipCode is a 5 digit number in the 12345 format. 
+    //Note that this simply checks to see if $zipCode is a 5 digit
+    //number, not necessarily a valid U.S. Zip Code
+    if (!preg_match('#[0-9]{5}#', $zipCode)) {
+        $result = true;   }
+
+    return $result;
+}
+
+
+
 
 function usernameTaken($connection, $username, $email) {
 
@@ -79,10 +97,10 @@ function usernameTaken($connection, $username, $email) {
     mysqli_stmt_close($statement);
 }
 
-function createUser($connection, $name, $email, $username, $password) {
+function createUser($connection, $firstName, $lastName, $email, $username, $password, $address, $city, $state, $zipCode) {
 
     //the question marks are just placeholders
-    $sql = "INSERT INTO users (usersName, usersEmail, usersUid, usersPwd) VALUES (?, ?, ?, ?);";
+    $sql = "INSERT INTO users (usersFirstName, usersLastName, usersEmail, usersUid, usersPwd, userAddress, userCity, userState, userZip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?);";
     
     $statement = mysqli_stmt_init($connection);
 
@@ -97,7 +115,7 @@ function createUser($connection, $name, $email, $username, $password) {
     //the 2nd parameter is asking what kind of data you're submitting
     //      4 strings being submitted ==> "ssss" 
     //the 3rd/4th/etc parameters are the actual data submitted by the user
-    mysqli_stmt_bind_param($statement, "ssss", $name, $email, $username, $hashedPwd);
+    mysqli_stmt_bind_param($statement, "ssssssssi", $firstName, $lastName, $email, $username, $hashedPwd, $address, $city, $state, $zipCode);
 
     //now we can execute the statement
     mysqli_stmt_execute($statement);
@@ -152,6 +170,8 @@ function logInUser($connection, $username, $password) {
         //create session variables
         $_SESSION["userid"] = $uidExists["usersId"];
         $_SESSION["useruid"] = $uidExists["usersUid"];
+        $_SESSION["userfirstname"] = $uidExists["usersFirstName"];
+        $_SESSION["userlastname"] = $uidExists["usersLastName"];
 
         //send the user back to the home page
         header("location: ../index.php");
