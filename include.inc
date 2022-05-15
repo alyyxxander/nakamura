@@ -120,25 +120,3 @@ function HTMLFooter() {
 ?>
 
 
-<?php
-function connectToDatabase() {
-    // set the connection information
-    $server = "localhost";
-    $username = "root";
-    $password = "root";
-    $database = "nakamura";
-
-    // connect to the database
-    //      create a new instance of a mysqli object. this
-    //      object contains the connection to the mysql server
-    $connection = new mysqli($server, $username, $password, $database);
-
-    // check for a successful connection
-    //      connect_error will evaluate to true if there is an error
-    if ($connection->connect_error) {
-        // stop the script and echo an error message
-        echo "<h2>Database Error!</h2>\n";
-        die("MySQLi Connection Error: " . $connection->connect_error . "\n");
-    }
-}
-?>
